@@ -6,9 +6,16 @@ import { AuthContext } from '../context/AuthContext';
 import { LoginScreen } from '../screens/LoginScreen';
 import { HomeScreen } from '../screens/HomeScreen';
 import { LoadingScreen } from '../screens/LoadingScreen';
+import { Movie } from '../interfaces/movieInterface';
+import { DetailScreen } from '../screens/DetailScreen';
 
+export type RootStackParams = {
+  LoginScreen: undefined;
+  HomeScreen: undefined;
+  DetailScreen: Movie;
+}
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParams>();
 
 export const Navigator = () => {
 
@@ -34,7 +41,10 @@ export const Navigator = () => {
             </>
           )
           : (
+            <>
             <Stack.Screen name="HomeScreen" component={ HomeScreen } />
+            <Stack.Screen name="DetailScreen" component={ DetailScreen } />
+            </>
           )
       }
 
