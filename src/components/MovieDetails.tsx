@@ -32,6 +32,9 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
                     <Text style={{ marginLeft: 5 }}>
                          - { movieFull.genres.map( g => g.name ).join(', ') }
                     </Text>
+                    <Text style={{ marginLeft: 5}}>
+                        { movieFull.release_date }
+                    </Text>
 
                 </View>
 

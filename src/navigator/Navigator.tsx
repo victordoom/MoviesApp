@@ -4,15 +4,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from '../context/AuthContext';
 
 import { LoginScreen } from '../screens/LoginScreen';
-import { HomeScreen } from '../screens/HomeScreen';
 import { LoadingScreen } from '../screens/LoadingScreen';
+import { Tabs } from './TabNavigator';
 import { Movie } from '../interfaces/movieInterface';
-import { DetailScreen } from '../screens/DetailScreen';
 
 export type RootStackParams = {
   LoginScreen: undefined;
-  HomeScreen: undefined;
+  Tabs: undefined;
   DetailScreen: Movie;
+  HomeScreen: undefined;
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -41,10 +41,7 @@ export const Navigator = () => {
             </>
           )
           : (
-            <>
-            <Stack.Screen name="HomeScreen" component={ HomeScreen } />
-            <Stack.Screen name="DetailScreen" component={ DetailScreen } />
-            </>
+            <Stack.Screen name="Tabs" component={ Tabs } options={{ headerShown: false}} />
           )
       }
 

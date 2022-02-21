@@ -22,10 +22,10 @@ export const useMovies = () => {
 
     const getMovies = async () => {
         
-        const nowPlayingPromise = movieDB.get<MovieDBResponse>('/now_playing');
-        const popularPromise    = movieDB.get<MovieDBResponse>('/popular');
-        const topRatedPromise   = movieDB.get<MovieDBResponse>('/top_rated');
-        const upcomingPromise   = movieDB.get<MovieDBResponse>('/upcoming');
+        const nowPlayingPromise = movieDB.get<MovieDBResponse>('movie/now_playing');
+        const popularPromise    = movieDB.get<MovieDBResponse>('movie/popular');
+        const topRatedPromise   = movieDB.get<MovieDBResponse>('movie/top_rated');
+        const upcomingPromise   = movieDB.get<MovieDBResponse>('movie/upcoming');
         
         const resps = await Promise.all([ 
             nowPlayingPromise, 
